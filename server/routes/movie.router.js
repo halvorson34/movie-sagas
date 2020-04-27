@@ -2,20 +2,17 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
-router.post("/", (req, res) => {
-  console.log(req.body);
+//router.put("/", (req, res) => {});
 
-  const queryString = `INSERT INTO "movies_genres"
-    ( "movie_id", "genre_id" )
-    VALUES ($1, $2);`;
-
+router.get("/movie", (req, res) => {
+  const queryText = "SELECT * FROM movies";
   pool
-    .query(queryString, [req.body.home, req.body.edit, req.body.details])
-    .then((response) => {
-      res.sentStatus(200);
+    .query(queryText)
+    .then((result) => {
+      res.send(result.rows);
     })
     .catch((err) => {
-      console.log(err);
+      console.log("Error in GET", err);
       res.sendStatus(500);
     });
 });

@@ -16,6 +16,9 @@ class DetailsPage extends Component {
     return (
       <div>
         <h1>Details</h1>
+        <h3>Genre</h3>
+        {this.props.store.movieReducer.movie.genre}
+        <br />
         <button onClick={this.movieListClick}>Back to Movie List</button>
         <button onClick={this.editMovieClick}>Edit Movie</button>
       </div>
@@ -23,4 +26,6 @@ class DetailsPage extends Component {
   }
 }
 
-export default connect()(DetailsPage);
+const mapStoreToProps = (store) => ({ store });
+
+export default connect(mapStoreToProps)(DetailsPage);

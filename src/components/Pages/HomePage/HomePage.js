@@ -14,14 +14,20 @@ class HomePage extends Component {
       <img
         src="/images/toy-story.jpg"
         onClick={this.handleClick}
-        class="posterImage"
+        id="posterImage"
       />
     );
 
-    return <div class="moviePosters">{toystoryImage}</div>;
+    return (
+      <div id="moviePosters">
+        {toystoryImage}
+        <br />
+        {this.props.store.movieReducer.movie.description}
+      </div>
+    );
   }
 }
 
-//const mapStoreToProps = (store) => ({ store });
+const mapStoreToProps = (store) => ({ store });
 
-export default connect()(HomePage);
+export default connect(mapStoreToProps)(HomePage);

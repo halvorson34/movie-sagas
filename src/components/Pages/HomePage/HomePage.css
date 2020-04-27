@@ -1,8 +1,8 @@
-.posterImage:hover {
+#posterImage:hover {
   box-shadow: 10px 10px yellow;
 }
 
-.posterImage:active {
+#posterImage:active {
   transform: translate(5px, 5px);
   box-shadow: 5px 5px yellow;
 }
