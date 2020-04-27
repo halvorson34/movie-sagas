@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Button } from "@material-ui/core";
 
 class DetailsPage extends Component {
   movieListClick = (event) => {
@@ -19,8 +20,22 @@ class DetailsPage extends Component {
         <h3>Genre</h3>
         {this.props.store.movieReducer.movie.genre}
         <br />
-        <button onClick={this.movieListClick}>Back to Movie List</button>
-        <button onClick={this.editMovieClick}>Edit Movie</button>
+        <Button
+          onClick={this.movieListClick}
+          variant="contained"
+          color="primary"
+          size="medium"
+        >
+          Back to Movie List
+        </Button>
+        <Button
+          onClick={this.editMovieClick}
+          variant="contained"
+          color="secondary"
+          size="medium"
+        >
+          Edit Movie
+        </Button>
       </div>
     );
   }
