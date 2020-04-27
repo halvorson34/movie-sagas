@@ -6,3 +6,7 @@
   transform: translate(5px, 5px);
   box-shadow: 5px 5px yellow;
 }
+
+#posterImage {
+  margin: 20px;
+}
