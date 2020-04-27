@@ -18,7 +18,7 @@ class DetailsPage extends Component {
       <div>
         <h1>Details</h1>
         <h3>Genre</h3>
-        {this.props.store.movieReducer.movie.genre}
+        <div>{this.props.store.movieReducer.movie.genre}</div>
         <br />
         <Button
           onClick={this.movieListClick}
