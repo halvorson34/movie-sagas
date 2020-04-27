@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./HomePage.css";
-//import MoviePosters from "../HomePage/posterData";
 
 class HomePage extends Component {
   handleClick = (event) => {

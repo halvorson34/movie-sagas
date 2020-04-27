@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Button } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+
 import "./EditPage.css";
 
 class EditPage extends Component {
@@ -63,10 +66,24 @@ class EditPage extends Component {
             ></textarea>
           </div>
           <div>
-            <button onClick={this.cancelClick}>Cancel</button>
+            <Button
+              onClick={this.cancelClick}
+              href="#text-buttons"
+              color="primary"
+              size="large"
+            >
+              Cancel
+            </Button>
           </div>
           <div>
-            <button onClick={this.handleSave}>Save</button>
+            <Button
+              onClick={this.handleSave}
+              color="secondary"
+              size="large"
+              variant="contained"
+            >
+              Save
+            </Button>
           </div>
         </form>
       </div>
