@@ -4,23 +4,21 @@ import "./EditPage.css";
 
 class EditPage extends Component {
   state = {
-    updateMovie: {
-      newGenre: "",
-      newDescription: "",
-    },
+    genre: "",
+    description: "",
   };
 
   inputChange = (event) => {
     event.preventDefault();
     this.setState({
-      newTitle: event.target.value,
+      genre: event.target.value,
     });
   };
 
   textAreaChange = (event) => {
     event.preventDefault();
     this.setState({
-      newDescription: event.target.value,
+      description: event.target.value,
     });
   };
 
@@ -30,7 +28,10 @@ class EditPage extends Component {
   };
 
   handleSave = () => {
-    this.props.dispatch({ type: "SET_MOVIE", payload: this.state.updateMovie });
+    this.props.dispatch({
+      type: "SET_MOVIES",
+      payload: this.state,
+    });
     this.props.history.push("/");
   };
 
@@ -73,4 +74,6 @@ class EditPage extends Component {
   }
 }
 
-export default connect()(EditPage);
+const mapStoreToProps = (store) => ({ store });
+
+export default connect(mapStoreToProps)(EditPage);
